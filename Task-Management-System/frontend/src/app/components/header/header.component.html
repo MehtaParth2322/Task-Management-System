@@ -1,0 +1,31 @@
+<header [ngStyle]="{ 'box-shadow': '0 0 3px #aaa' }">
+  <nav class="navbar bg-body-tertiary">
+    <div class="container">
+      <a routerLink="./" class="navbar-brand">Task Management System</a>
+      <div class="d-flex align-items-center">
+        <ng-container *ngIf="userName; else loggedOut">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/taskList">Task List</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="openAddTaskForm()">Add Task</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/profile">Profile</a>
+            </li>
+          </ul>
+        </ng-container>
+        <ng-template #loggedOut>
+          <ng-container *ngIf="!isLoginPage()">
+            <a routerLink="/login" class="btn btn-sm btn-outline-primary mx-2">Login</a>
+          </ng-container>
+          <a routerLink="/register" *ngIf="!isRegisterPage()" class="btn btn-sm btn-primary mx-2">Register</a>
+        </ng-template>
+      </div>
+    </div>
+  </nav>
+</header>

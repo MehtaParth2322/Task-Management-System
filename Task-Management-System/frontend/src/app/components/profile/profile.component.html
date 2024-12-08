@@ -1,0 +1,26 @@
+<mat-card class="user-detail-container">
+    <mat-card-title>User Details</mat-card-title>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item>
+          <span matLine>First Name:</span>
+          <span matLine>{{ user.first_name }}</span>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <span matLine>Last Name:</span>
+          <span matLine>{{ user.last_name }}</span>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <span matLine>Email:</span>
+          <span matLine>{{ user.email }}</span>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="logout()">Logout</button>
+      <button mat-raised-button color="warn" (click)="deleteUser(user._id)">DeleteUser</button>
+    </mat-card-actions>
+  </mat-card>
+  

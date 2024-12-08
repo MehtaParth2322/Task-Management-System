@@ -1,0 +1,45 @@
+.task-card {
+    width: 100%;
+    margin-bottom: 20px;
+    color: #f5f5f5;
+  }
+  
+  .toolbar-title {
+    font-size: 24px;
+    font-weight: bold;
+    align-content: center;
+    align-items: center;
+    color: white;
+  }
+  
+  .table-container {
+    margin-top: 20px;
+  }
+  
+  .mat-table {
+    width: 100%;
+  }
+  
+  .mat-header-cell, .mat-cell {
+    padding: 12px 16px;
+    text-align: left;
+  }
+  
+  .mat-header-row, .mat-row {
+    background-color: #f5f5f5;
+  }
+  
+  .action-cell {
+    text-align: center;
+  }
+  
+  .mat-icon-button {
+    margin-left: 8px;
+  }
+  
+  .no-tasks-found {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #888;
+  }

@@ -1,0 +1,20 @@
+<form [formGroup]="confirmRegisterForm" (ngSubmit)="formSubmit()" class="mx-auto my-3" style="max-width: 420px;">
+    <mat-card>
+      <h3 class="text-center mb-3">Confirm Registration</h3>
+  
+      <div class="mt-5 mb-4">
+        <p>A Confirmation code is sent to email <strong>{{email}}</strong></p>
+      </div>
+  
+      <div class="mb-3">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Enter Confirmation code</mat-label>
+          <input matInput type="text" formControlName="code">
+        </mat-form-field>
+      </div>
+  
+      <div class="d-grid gap-2">
+        <button mat-raised-button color="primary" type="submit" class="w-100">Confirm</button>
+      </div>
+    </mat-card>
+  </form>

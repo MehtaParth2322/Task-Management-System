@@ -1,0 +1,52 @@
+<div id="model_wrapper" [class]="formOptions.showForm" class="form-container">
+  <form #taskForm="ngForm" (ngSubmit)="onSubmit(taskForm)" class="custom-form">
+    <div class="form-field">
+      <label for="title">Title</label>
+      <input type="text" id="title" name="title" [(ngModel)]="task.title" required>
+      <div *ngIf="taskForm.controls['title']?.invalid && taskForm.controls['title']?.touched" class="error">
+        Title is required
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label for="description">Description</label>
+      <textarea id="description" name="description" [(ngModel)]="task.description"></textarea>
+    </div>
+
+    <div class="form-field">
+      <label for="dueDate">Due Date</label>
+      <input type="date" id="dueDate" name="dueDate" [(ngModel)]="task.dueDate" required>
+      <div *ngIf="taskForm.controls['dueDate']?.invalid && taskForm.controls['dueDate']?.touched" class="error">
+        Due Date is required
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label for="priority">Priority</label>
+      <select id="priority" name="priority" [(ngModel)]="task.priority" required>
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+      <div *ngIf="taskForm.controls['priority']?.invalid && taskForm.controls['priority']?.touched" class="error">
+        Priority is required
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label for="status">Status</label>
+      <select id="status" name="status" [(ngModel)]="task.status" required>
+        <option value="pending">Pending</option>
+        <option value="in progress">In Progress</option>
+        <option value="completed">Completed</option>
+      </select>
+      <div *ngIf="taskForm.controls['status']?.invalid && taskForm.controls['status']?.touched" class="error">
+        Status is required
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button type="submit">{{ taskId ? 'Update' : 'Save' }}</button>
+    </div>
+  </form>
+</div>

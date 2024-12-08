@@ -1,0 +1,62 @@
+<mat-card class="task-card mat-elevation-z8">
+  <mat-toolbar color="primary">
+    <span class="toolbar-title">Tasks</span>
+  </mat-toolbar>
+
+  <div id="data_table" class="table-container">
+    <table mat-table [dataSource]="tasks" class="mat-table">
+      
+      <!-- Title Column -->
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef class="mat-header-cell"> Title </th>
+        <td mat-cell *matCellDef="let task" class="mat-cell"> {{task.title}} </td>
+      </ng-container>
+
+      <!-- Description Column -->
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef class="mat-header-cell"> Description </th>
+        <td mat-cell *matCellDef="let task" class="mat-cell"> {{task.description}} </td>
+      </ng-container>
+
+      <!-- Due Date Column -->
+      <ng-container matColumnDef="dueDate">
+        <th mat-header-cell *matHeaderCellDef class="mat-header-cell"> Due Date </th>
+        <td mat-cell *matCellDef="let task" class="mat-cell"> {{ task.dueDate | date: 'dd-MM-yyyy' }} </td>
+      </ng-container>
+
+      <!-- Priority Column -->
+      <ng-container matColumnDef="priority">
+        <th mat-header-cell *matHeaderCellDef class="mat-header-cell"> Priority </th>
+        <td mat-cell *matCellDef="let task" class="mat-cell"> {{task.priority}} </td>
+      </ng-container>
+
+      <!-- Status Column -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef class="mat-header-cell"> Status </th>
+        <td mat-cell *matCellDef="let task" class="mat-cell"> {{task.status}} </td>
+      </ng-container>
+
+      <!-- Action Column -->
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef class="mat-header-cell"> Action </th>
+        <td mat-cell *matCellDef="let task" class="mat-cell">
+          <button mat-icon-button color="primary" (click)="editTask(task)" class="mat-icon-button">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteTask(task)" class="mat-icon-button">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <!-- Header and Row Definitions -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns" class="mat-header-row"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns" class="mat-row"></tr>
+    </table>
+
+    <!-- Message for Empty Table -->
+    <div *ngIf="tasks.length === 0" class="no-tasks-found">
+      <h2>No tasks found</h2>
+    </div>
+  </div>
+</mat-card>

@@ -1,0 +1,27 @@
+<form [formGroup]="loginForm" (ngSubmit)="formSubmit()" class="mx-auto my-4" style="max-width: 420px;">
+  <mat-card class="custom-card">
+    <h3 class="text-center mb-3">Login</h3>
+    
+    <div class="mb-3">
+      <mat-form-field appearance="fill" class="w-100">
+        <mat-label>Email address</mat-label>
+        <input matInput type="email" formControlName="email">
+      </mat-form-field>
+    </div>
+    
+    <div class="mb-3">
+      <mat-form-field appearance="fill" class="w-100">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password">
+      </mat-form-field>
+    </div>
+    
+    <div class="d-grid gap-2">
+      <button mat-raised-button color="primary" type="submit" class="w-100">Login</button>
+    </div>
+    
+    <div class="my-3 text-center">
+      <p>Don't have an account? <a routerLink="/register">Register</a></p>
+    </div>
+  </mat-card>
+</form>

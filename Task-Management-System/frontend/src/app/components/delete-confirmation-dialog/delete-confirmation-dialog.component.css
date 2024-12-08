@@ -1,0 +1,28 @@
+.mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem 0;
+  }
+  
+  .confirm-button {
+    margin-right: 1rem;
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    color: white;
+    background-color: #4caf50; /* Green */
+  }
+  
+  .confirm-button:hover {
+    background-color: #45a049;
+  }
+  
+  .cancel-button {
+    padding: 0.5rem 1rem;
+    color: white;
+    background-color: #f44336; /* Red */
+  }
+  
+  .cancel-button:hover {
+    background-color: #e53935;
+  }
+  
